@@ -1,5 +1,86 @@
 body {
-  text-align: center;
+  box-sizing: border-box;
   margin: 0 auto;
   font-family: 'Amatic SC', cursive;
+  text-align: center;
+  color: rgb(68, 68, 68);
+}
+
+button {
+  cursor: pointer;
+  font-size: 2rem;
+  font-family: 'Amatic SC', cursive;
+  border: none;
+  margin: auto 10px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: 1fr auto auto;
+}
+
+.clear {
+  grid-row-start: 2;
+  grid-column-start: 2;
+  width: 100%;
+  margin: 0;
+  padding: 4px;
+  border-bottom-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+}
+
+.gameboard-container {
+  display: inherit;
+  grid-column-start: 2;
+  grid-row-start: 1;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  border-right: 3px solid hotpink;
+  border-bottom: 3px solid hotpink;
+}
+
+.gameboard-square {
+  box-shadow: 
+    3px 0 0 0 hotpink, 
+    0 3px 0 0 hotpink, 
+    3px 3px 0 0 hotpink,
+    3px 0 0 0 hotpink inset, 
+    0 3px 0 0 hotpink inset;
+}
+
+.gameboard-square > * {
+  font-size: 2rem;
+}
+
+.player1-container {
+  grid-row-start: 1;
+  grid-column-start: 1;
+}
+.player2-container {
+  grid-row-start: 1;
+  grid-column-start: 3;
+}
+
+.player1-container p,
+.player2-container p {
+  font-size: 2rem;
+  width: 130px;
+  margin: auto 10px;
+  background-color: rgb(173, 228, 250);
+  text-shadow: 1px 1px greenyellow;
+  box-shadow: -3px 0 greenyellow,
+              3px 0 greenyellow;
+}
+
+.winner-container {
+  grid-row-start: 1;
+  grid-column-start: 2;
+  background-image: linear-gradient(rgba(135, 207, 235, 0.5), white, rgba(135, 207, 235, 0.5));
+  font-size: 2rem;
+}
+
+.winner-container p {
+  margin-top: 43%;
+
 }
